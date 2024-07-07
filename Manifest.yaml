@@ -156,6 +156,12 @@ spec:
                 configMapKeyRef:
                   name: mongodb-configmap
                   key: db_host
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8081
+            initialDelaySeconds: 5
+            periodSeconds: 5
 
 ---
 apiVersion: v1
